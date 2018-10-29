@@ -1,0 +1,280 @@
+.owm-icondiv {
+	width: 50px;
+	opacity: 0.7;
+	text-align: center;
+	background-color: lightgray;
+	border-radius: 10px;
+	border: 1px solid darkgray;
+}
+
+.owm-icondiv-temp {
+	color: black;
+	font-weight: bold;
+	text-shadow: 0.1em 0.1em 0.1em white;
+	xtext-shadow: white 0.1em 0.1em;
+}
+
+.owm-popup-name {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.owm-popup-name a:link, .owm-popup-name a:active, .owm-popup-name a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.owm-popup-name a:hover {
+	color: red;
+	text-decoration: none;
+}
+
+.owm-popup-description {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.owm-popup-main {
+}
+
+.owm-popup-main img {
+	vertical-align: middle;
+}
+
+.owm-popup-main span {
+	padding-left: 0.5em;
+}
+
+.owm-popup-temp {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.owm-popup-details {
+}
+
+.owm-popup-detail {
+}
+
+.owm-popup-timestamp {
+	color: gray;
+	padding-top: 0.5em;
+}
+
+.owm-legend-item {
+}
+body {
+  margin: 0;
+  padding: 0; }
+
+#water {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 500;
+  display: none; }
+
+.switch {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 600; }
+
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden; }
+
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none; }
+
+input.cmn-toggle-round-flat + label {
+  padding: 2px;
+  width: 50px;
+  height: 28px;
+  background-color: #dddddd;
+  border-radius: 60px;
+  transition: background 0.4s; }
+
+input.cmn-toggle-round-flat + label:before,
+input.cmn-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: ""; }
+
+input.cmn-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #fff;
+  border-radius: 60px;
+  transition: 0.4s; }
+
+input.cmn-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 25px;
+  background-color: #dddddd;
+  border-radius: 25px;
+  transition: margin 0.4s, background 0.4s; }
+
+input.cmn-toggle-round-flat:checked + label {
+  background-color: #8ce196; }
+
+input.cmn-toggle-round-flat:checked + label:after {
+  margin-left: 20px;
+  background-color: #8ce196; }
+
+#map {
+  width: 100vw;
+  height: 100vh; }
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.4); }
+  .marker-cluster div {
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 15px;
+    font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-style: italic;
+    background-color: white; }
+    .marker-cluster div span {
+      line-height: 30px; }
+
+.marker-cluster-small {
+  width: 30px !important;
+  height: 30px !important; }
+  .marker-cluster-small div {
+    width: 20px !important;
+    height: 20px !important; }
+    .marker-cluster-small div span {
+      line-height: 20px !important; }
+
+.marker-cluster-medium {
+  width: 40px !important;
+  height: 40px !important; }
+  .marker-cluster-medium div {
+    width: 30px !important;
+    height: 30px !important; }
+    .marker-cluster-medium div span {
+      line-height: 30px !important; }
+
+.marker-cluster-large {
+  width: 40px !important;
+  height: 40px !important; }
+  .marker-cluster-large div {
+    width: 30px !important;
+    height: 30px !important; }
+    .marker-cluster-large div span {
+      line-height: 30px !important; }
+
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+  -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-in; }
+
+.leaflet-cluster-spider-leg {
+  /* stroke-dashoffset (duration and function) should match with leaflet-marker-icon transform in order to track it exactly */
+  -webkit-transition: -webkit-stroke-dashoffset 0.3s ease-out, -webkit-stroke-opacity 0.3s ease-in;
+  -moz-transition: -moz-stroke-dashoffset 0.3s ease-out, -moz-stroke-opacity 0.3s ease-in;
+  -o-transition: -o-stroke-dashoffset 0.3s ease-out, -o-stroke-opacity 0.3s ease-in;
+  transition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in; }
+
+.point-container .point {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transition: width .6s, height .6s; }
+  .point-container .point .background {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+    transition: width .6s, height .6s; }
+  .point-container .point .image {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    z-index: 2;
+    transition: width .7s, height .7s; }
+  .point-container .point .title {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: -157px;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    z-index: 2;
+    font-style: italic;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    transition: width .7s, height .7s; }
+  .point-container .point .text {
+    position: absolute;
+    margin: auto;
+    top: 36px;
+    right: -157px;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    z-index: 2;
+    font-style: italic;
+    color: white;
+    font-size: 10px;
+    padding: 10px;
+    transition: width .7s, height .7s; }
+    .point-container .point .text a {
+      color: white;
+      text-decoration: none; }
+
+.point-container:hover {
+  width: 80px;
+  height: 80px; }
+  .point-container:hover .background {
+    width: 80px;
+    height: 80px; }
+  .point-container:hover .image {
+    opacity: 1;
+    width: 72px;
+    height: 72px; }
+  .point-container:hover .title {
+    opacity: 1;
+    width: 72px;
+    height: 72px; }
+  .point-container:hover .text {
+    opacity: 1;
+    width: 72px;
+    height: 72px; }
+
