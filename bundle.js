@@ -130,14 +130,19 @@ var divWater = document.getElementById('water');
 function switchWater() {
   switchToWater = !switchToWater;
   divWater.style.display = switchToWater ? 'block' : 'none';
+  div.style.backgroundColor = switchToWater ? '#6bdfff' : '#fbfbfb';
 }
 
-var div = document.createElement('div');
-div.innerHTML = "<input id=\"cmn-toggle-4\" class=\"cmn-toggle cmn-toggle-round-flat\" type=\"checkbox\">\n<label for=\"cmn-toggle-4\"></label>";
+var div = document.createElement('div'); // div.innerHTML = `<input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+// <label for="cmn-toggle-4"></label>`;
+// div.className = 'switch';
+// document.body.appendChild(div);
+// let input = document.getElementById('cmn-toggle-4');
+// input.addEventListener('click', switchWater);
+
 div.className = 'switch';
 document.body.appendChild(div);
-var input = document.getElementById('cmn-toggle-4');
-input.addEventListener('click', switchWater);
+div.addEventListener('click', switchWater);
 
 /***/ }),
 /* 1 */
@@ -29296,7 +29301,7 @@ var PROPS = {
 };
 
 var map = _leaflet.default.map('map', {
-  minZoom: 0,
+  minZoom: 3,
   maxZoom: 7
 });
 
@@ -30847,7 +30852,7 @@ exports.default = void 0;
 __webpack_require__(74);
 
 var point = function point(image_path, title, link) {
-  return "\n<div class=\"point\">\n  <div class=\"background\"></div>\n  <img class=\"image\" src=\"".concat(image_path, "\"/>\n  <div class=\"title\">").concat(title, "</div>\n  <div class=\"text\">\n    <br>\n    <a href=\"").concat(link, "\">\u2192</a>\n  </div>\n</div>\n\n");
+  return "\n<div class=\"point\">\n  <div class=\"background-wrapper\"></div>\n  <div class=\"background\"></div>\n  <img class=\"image\" src=\"".concat(image_path, "\"/>\n  <div class=\"title\"><a href=\"").concat(link, "\">").concat(title, "</a></div>\n</div>\n\n");
 };
 
 var _default = point;
