@@ -30821,7 +30821,7 @@ var POINTS = [];
 
 for (var i = 0; i < _data.default.length; i++) {
   POINTS.push({
-    html: (0, _point.default)(SPACE_TEST, _data.default[i].title, _data.default[i].linkUrl),
+    html: (0, _point.default)(_data.default[i].imageUrl, _data.default[i].title, _data.default[i].linkUrl),
     latitude: convertToPixels(_data.default[i].lat, "lat"),
     longtitude: convertToPixels(_data.default[i].lon, "lon")
   });
@@ -30889,126 +30889,126 @@ var data = [{
   "title": "Gombessa III",
   "description": "Following on from the Gombessa I expedition, which revealed the secrets of the coelacanth, the greatest zoological discovery of the 20th century, and Gombessa II, which studied the spectacular spawn of the camouflage grouper, Laurent Ballesta and Blancpain travelled to Antarctica in 2015 for a pioneering exploratory, diving and photographic mission.\nThe HQ of the Gombessa III expedition was set up at the French Dumont d'Urville scientific base in Adélie Land. This was the first time a team of technical divers was able to go beneath the sea ice in this region. Each of the dives, never previously undertaken, represented an achievement on both human and technical levels, and delivered the very first naturalist images of Antarctica’s deep-sea ecosystems. At the request of several research groups, particularly those at the National Museum of Natural History (MNHN) in Paris and the National Center for Scientific Research (CNRS) in Marseille, the Gombessa III team contributed to an inventory of deep-sea fauna that was created in relation to the issue of global warming, and shared all of their footage with researchers for use in scientific publications.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/gombessa-expeditions/gombessa-iii",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-07/43-25112015-25112015-_dsc5826-modifier-modifier-modifier-modifier_low.jpg?h=f48644b5&itok=uU2gODPd"
+  "imageUrl": "./images/43-25112015-25112015-_dsc5826-modifier-modifier-modifier-modifier_low.jpg"
 }, {
   "lat": -16.519581,
   "lon": -145.460529,
   "title": "Gombessa II",
   "description": "After having encountered the cœlacanth during his first Gombessa expedition, diver, photographer and biologist Laurent Ballesta went to Fakarava in French Polynesia for a new scientific expedition intended to study the spawning aggregation of camouflage groupers and its interaction with a huge aggregation of 700 gray reef sharks.\nIn collaboration with French Polynesia's Centre de Recherche Insulaire et Observatoire de l’Environnement (CRIOBE), this Gombessa II mission presented three major challenges: a 24h dive at 20 meters deep, made possible with a new and original gas mix, spending a complete day underwater with sharks and groupers; a challenge in terms of photography as this rare and extremely fast event requires a shooting of more than 2000 images per second; and finally the scientific challenge of studying the mechanisms governing this vital phenomenon and its key role on the lagoon's ecosystem.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/gombessa-ii",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-07/_dsc7795_low.jpg?h=a461c67f&itok=G-HYY1jk"
+  "imageUrl": "./images/_dsc7795_low.jpg"
 }, {
   "lat": -27.551321,
   "lon": 32.682649,
   "title": "Gombessa I",
   "description": "Locally known as Gombessa, the cœlacanth measures two metres long and was once thought to have become extinct 70 million years ago. However, this rare fish, when discovered alive in 1938 has come to represent one of the most important zoological discoveries of the 20th century. It is indeed seen as the \"transition animal\" from backboned fish to the earliest four-legged vertebrate land animals, and with its lobe fins and \"primitive lung\", this fish is the longed-for living proof of early life’s transition from water to land, which took place 370 million years ago. For over a century, the cœlacanth has sparked intense debate between scientists and creationists.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/gombessa-expeditions/gombessa-i",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/gombessa-the-meeting.jpg?h=2488b415&itok=DzzqeHv3"
+  "imageUrl": "./images/gombessa-the-meeting.jpg"
 }, {
   "lat": -25.0667,
   "lon": -130.1,
   "title": "Pitcairn",
   "description": "In 1789, the H.M.S. Bounty mutineers, evading British justice, set off from Tahiti in search of a refuge. What they found was one of the most remote islands on Earth, located thousands of kilometers from any continent. In an act that sealed their fates, the group sank the Bounty off the island’s coast—and remained there, undiscovered, for 18 years.\nToday the Pitcairn Islands are among the last of the British overseas territories, and Pitcairn itself is home to fewer than 60 people. Many are the direct descendants of the Bounty’s Fletcher Christian, his fellow mutineers, and their Polynesian companions. They are the only inhabitants of an archipelago of four far-flung islands and atolls. These include Ducie, the world’s southernmost atoll and one of the most remote on the planet; Henderson, a raised coral bed topped with rugged greenery; and Oeno, the closest of the islands to populated neighbor French Polynesia.\nDue to their remoteness and low human population, these islands harbor marine wildlife in an almost pristine state, including intact deep-sea habitats with many species new to science.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/pitcairn",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/pitcairn-islands-coral-pale-blue.jpg?h=8abcec71&itok=qxhTe9sj"
+  "imageUrl": "./images/pitcairn-islands-coral-pale-blue.jpg"
 }, {
   "lat": -26.32,
   "lon": -80,
   "title": "Desventuradas Islands",
   "description": "Despite their name, meaning “unfortunate” in Spanish, the islands of San Ambrosio and San Felix lie amid some of the most pristine waters in the Eastern Pacific. Off their rocky coasts, Juan Fernández fur seals play in one of their only homes on Earth, and yellowtail jacks hunt in forests of swaying kelp. Twenty-five meters below the surface, on the dark face of a volcanic rock, long-spined sea urchins cling and feed by the thousands. And hiding at deeper depths are fragile corals, 15-pound lobsters, deep-sea sharks, and strange jellies dancing hypnotically in the water column.\nRunning between the islands and mainland Chile is the north-flowing Humboldt Current, which creates a biogeographic barrier responsible for the Desventuradas’ unique diversity of life. Here, marine species from tropical, subtropical, and temperate zones converge, and the biome can more closely resemble that of the central and South Pacific despite the islands’ proximity with the South American continent.\nAbout 750 kilometers to the south, the Juan Fernández archipelago is home to fishermen who travel seasonally to the Desventuradas in pursuit of the islands’ giant lobsters.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/desventuradas-islands",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/desventuradas-islands-sealions-1.jpg?h=8abcec71&itok=oPpBR9VD"
+  "imageUrl": "./images/desventuradas-islands-sealions-1.jpg"
 }, {
   "lat": 0.3833,
   "lon": 9.45,
   "title": "Gabon",
   "description": "Where the forests and rivers of Gabon meet the sea, a stunning array of wildlife makes an incongruous appearance. Hippos surf the breaking waves. Forest elephants stroll the beach. Buffalos soak up the sun.\nOn this stretch of West African coast the world’s largest nesting population of leatherback sea turtles comes ashore by the thousands to lay eggs in the sand. In the coastal reefs offshore, olive ridley sea turtles feast on invertebrates, while out to sea the Southern Hemisphere’s largest population of humpback whales plies the waters during peak season, nursing their young before migrating south.\nHere, freshwater rivers carry inland nutrients to the sea, creating rich feeding grounds for marine life. Barracuda and tuna swim the murky depths, schooling around the pilings of working offshore oil platforms rooted in the seafloor. Covered in coral polyps, the pilings have become a reef-like habitat for fishes large and small, including rainbow runners, damselfish, wrasses, and snappers. But it’s the top predators—sharks—that make Gabon’s underwater ecosystem complete.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/gabon",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/gabon-amazing-underwater-life-3.jpg?h=8abcec71&itok=aaAZfVBw"
+  "imageUrl": "./images/gabon-amazing-underwater-life-3.jpg"
 }, {
   "lat": 81,
   "lon": 55,
   "title": "Franz Josef Land",
   "description": "High in the Russian Arctic—about 900 kilometers from the North Pole—sits Franz Josef Land, the world’s northernmost archipelago. Made up of 192 islands comprising more than 16,000 square kilometers, the uninhabited island chain has until recently been locked beneath ice for much of the year.\nOn land, polar bears reign, and colonies of kittiwakes, little auks, and other seabirds claim the scree slopes and cliffs. Offshore, bowhead whales feed in the frigid waters and Atlantic walruses haul out on diminishing sea ice. A key species for this unique ecosystem? The tiny, temperature-sensitive copepod, a crustacean that’s food for seabirds and also for the fish that in turn feed marine mammals. It’s a delicate balance—and one that depends on the presence of ice.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/franz-josef-land",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/franz-josef-land-iceberg.jpg?h=2488b415&itok=rkCAv7Yv"
+  "imageUrl": "./images/franz-josef-land-iceberg.jpg"
 }, {
   "lat": -21.25,
   "lon": 165.3,
   "title": "New Caledonia",
   "description": "In the waters off the remote coral islands and atolls of New Caledonia in the South Pacific’s Coral Sea, the fish have likely never seen a diver, and it’s the sharks—blacktips, whitetips, silvertips, gray reefs, nurse sharks, and others—that preside over the pristine reefs, their familiar shapes moving above a seafloor covered in hard and soft corals. Joining them is an incredible abundance of life. In the Huon Islands, sea snakes, giant clams, sea lilies, and minute anemone shrimp all claim space. Just north of the mainland, at Astrolabe Reef, large groupers and Napoleon wrasses ply the waters, and the vulnerable bumphead parrotfish can swim in schools of as many as 75 individuals. In the west, the Chesterfield Islands serve as the most important rookery in the South Pacific for green sea turtles, which swim, mate, and lay their eggs here. New Caledonia is also home to the world’s third largest population of dugongs, and its lagoons have been designated a World Heritage site by UNESCO.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/new-caledonia",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/new-caledonia-green-turtle.jpg?h=2488b415&itok=L5ErSiKq"
+  "imageUrl": "./images/new-caledonia-green-turtle.jpg"
 }, {
   "lat": -23,
   "lon": 34.5,
   "title": "Southern Mozambique",
   "description": "When Portuguese explorer Vasco Da Gama arrived in present-day Mozambique’s port city of Inhambane in the late 15th century, he’s said to have experienced such friendliness from the locals that he called it Terra da Boa Gente—“Land of the Good People.”\nToday, Inhambane retains its unique charm on a stretch of southeast African coastline that’s in flux. The waters surrounding its bay are home to one of the world’s largest concentrations of marine megafauna, including manta rays, whale sharks, and bull sharks, as well as regionally endangered dugongs. But climate change has delivered record flooding, which has in turn brought enormous quantities of freshwater, silt, and debris into the sea. Meanwhile, coastal development and offshore oil and gas drilling further threaten the region’s pristine reefs, which exist on the border between subtropical and tropical climate zones.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/southern-mozambique",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/mozambique-divers-with-giant-manta-rays.jpg?h=2488b415&itok=SVP00nmH"
+  "imageUrl": "./images/mozambique-divers-with-giant-manta-rays.jpg"
 }, {
   "lat": 7.35,
   "lon": 134.4667,
   "title": "Palau",
   "description": "The Republic of Palau, a tropical archipelago in the Western Pacific, is renowned for its matchless island scenery, pristine dive sites, and world-famous natural features, including the Forest-Tufted Rock Islands and surreal Jellyfish Lake.\nWhile 70 percent of Palau’s population lives on the main island of Koror, the entire nation consists of more than 300 islands, many of them entirely uninhabited. Given this unique geography, Palauans have traditionally worked to maintain a balance with the sea. The local custom of bul, for instance—practiced for generations—temporarily closes certain areas to fishing in order to allow marine life to recover.\nAfter World War II, population growth and the intensification of fishing using modern technology began to take a toll on the undersea life of the area, and it became increasingly critical to take steps toward preserving Palau’s waters for generations to come. Aware of the country’s past and concerned about its future, in 2009 then President Johnson Toribiong declared the first shark sanctuary in the world.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/palau",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/main-picture-palau_exped.jpg?h=2488b415&itok=TkW4rTqv"
+  "imageUrl": "./images/main-picture-palau_exped.jpg"
 }, {
   "lat": -27.581987,
   "lon": -144.427793,
   "title": "Rapa",
   "description": "Rapa Iti and Marotiri, the southernmost islands of French Polynesia, have long been a haven for nature, remote as they are in an already remote region. Inhabited relatively lightly by Polynesians throughout most of history, these far-flung islands have been Free of the intense fishing and development that have altered other areas so dramatically in recent centuries.\nInhabiting the waters here are a large number of endemic species, including the Rapa toby and Rapa sweeper, the latter photographed for the first time on this expedition. The existence of two contrasting habitats in Rapa’s waters (coral gardens with high sea urchin densities versus Sargassum seaweed forests devoid of sea urchins) increases the diversity of the seascape, adding additional value to the conservation of the island’s unique underwater ecosystems.\nWhile the rocky islets of Marotiri are entirely unpopulated, the current inhabitants of Rapa have taken notice of the ecological treasure their home contains. They are among the only islanders to practice a traditional conservation method called rahui, a seasonal program for marine and land management.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/rapa",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/rapa_main_picture.jpg?h=2488b415&itok=sjH83c63"
+  "imageUrl": "./images/rapa_main_picture.jpg"
 }, {
   "lat": -4.679574,
   "lon": 55.491977,
   "title": "Outer Seychelles Islands",
   "description": "Aldabra, possibly the Seychelles Archipelago’s most famous island, is one of the world’s largest coral atolls and has been a World Heritage site since 1982. Minimally impacted by human activity, it serves as a refuge for hundreds of endemic species and subspecies and is home to the largest population of giant tortoises in the world; more than 150,000 roam a 155-square-kilometer area.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/outer-seychelles-islands",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/main_seychelles.jpg?h=2488b415&itok=0P6KFOAQ"
+  "imageUrl": "./images/main_seychelles.jpg"
 }, {
   "lat": 30.0169444,
   "lon": -15.866944,
   "title": "Selvagens Islands",
   "description": "The rugged, inhospitable Ilhas Selvagens, or Savage Islands, have frustrated centuries of colonization attempts. Located nearly midway between Madeira and the Canary Islands in the North Atlantic, this small archipelago is today Portugal’s southernmost territory, comprised of two main islands and multiple islets that remain uninhabited by all but a hardy few.\nIn recognition of their importance as a nesting point for numerous bird species—including the Atlantic’s largest breeding colony of Cory’s shearwaters—the Selvagens were designated as a natural reserve by Portugal in 1971. They are now part of the country’s Madeira Nature Park, whose rangers are the sole occupants of the remote outpost, sharing the harsh landscape with the endemic Selvagens gecko.\nOffshore, shipwrecks litter the marine landscape, the work of violent oceanic swells that, while dangerous on the surface, also churn up nutrients below, creating a rich environment for sea life. As part of the nature park, the islands’ surrounding waters are protected out to 12 miles and to a depth of 200 meters.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/selvagens-islands",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/5200-0130-nab_a_pr_0.jpg?h=2488b415&itok=hQ_-i6tI"
+  "imageUrl": "./images/5200-0130-nab_a_pr_0.jpg"
 }, {
   "lat": -0.6519,
   "lon": -90.4056,
   "title": "Galápagos Islands",
   "description": "Reached by four major ocean currents, including upwellings of deep water rich in nutrients, the Galápagos Islands off the coast of South America are a hotspot of biodiversity. Coexisting at this junction are tropical and temperate species and species typically found farther south. Many are found nowhere else on Earth, and their unique characteristics famously inspired Charles Darwin’s theory of evolution by natural selection.\nThe islands are among the most singular and irreplaceable areas in the world, harboring over 2,900 known species of fish, invertebrates, and marine mammals, in addition to endemic seabirds, the world’s only marine iguana, and the world’s highest abundance of sharks. Of these marine animals, 57 are included on the IUCN Red List of Threatened Species.\nDespite the Galápagos Islands’ unparalleled value to our natural heritage, little scientific information existed on their marine ecosystems beyond the narrow, shallow strip of ocean surrounding the archipelago. And, until recently, less that 1 percent of the islands’ waters was fully protected from fishing.\nTo understand the broader marine ecosystem of the Galápagos, the Pristine Seas team carried out an expedition to the archipelago in collaboration with the Galápagos National Park and the Charles Darwin Research Station. They used high-tech methods—including rebreathers, a manned submersible, 360-degree imaging, satellite tracking of sharks, and National Geographic drop cameras—to survey and document its deep and offshore environments.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/galapagos-islands",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/galapagos-2015-uw-1597.jpg?h=2488b415&itok=uLdBpfZG"
+  "imageUrl": "./images/galapagos-2015-uw-1597.jpg"
 }, {
   "lat": 77.468,
   "lon": -69.25,
   "title": "Last Ice Area",
   "description": "As the sea ice declines, industrial activities such as fishing, shipping, mining, and drilling are expected to expand northward. These emerging threats will affect not only the area’s wildlife but also its Inuit communities, which have traditionally relied on these animals for food, dress, shelter, and energy.\nTo raise awareness of these dramatic changes in the high Arctic, Pristine Seas has collaborated with the World Wildlife Fund-Canada and worked closely with Inuit communities to document their stories and traditions. The team aimed at recording the ways in which Inuit culture is connected to the extraordinary local wildlife and evaluated how the disappearance of ice will impact these populations and their relationships with one another.\nPristine Seas conducted two primary expeditions to the region in 2015, filming Arctic wildlife and the traditional way of life of the Inuit and recording local stories and views on the ongoing environmental changes. The first of these expeditions focused on Qaanaaq, one of the most traditional Inuit villages in Greenland. The project's second expedition took place at Canada’s Baffin Island.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/last-ice-area",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/1600x817.jpg?h=2488b415&itok=F-5Hf8jU"
+  "imageUrl": "./images/1600x817.jpg"
 }, {
   "lat": 18.8166667,
   "lon": 112.76666666667,
   "title": "Revillagigedo Archipelago",
   "description": "In March 2016, partnering with Mares Mexicanos, the Pristine Seas team conducted an expedition to explore the waters around the small reserve—including never before surveyed seamounts. The team traveled to Socorro, San Benedicto, and Roca Partida to evaluate their fish biomass and improve understanding of how the entire ecosystem of the archipelago works. To fully explore the area, they descended to the depths in the DeepSee submersible, deployed remote drop and stereo pelagic cameras, made scuba diving transects, and operated drone cameras. Using high-tech tools and conducting 140 scuba dives allowed the team to get a comprehensive look at the marine environment. While conducting their scientific surveys, they sampled shark populations, swam with San Benedicto’s famed giant manta rays, and observed unique sea fan gardens at a depth of over 80 meters.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/pristine-seas-expeditions/revillagigedo-archipelago",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/socorro_uw-297.jpg?h=2488b415&itok=lPcVkKL6"
+  "imageUrl": "./images/socorro_uw-297.jpg"
 }, {
   "lat": 10.2833,
   "lon": -109.167,
   "title": "Clipperton Atoll",
   "description": "For their expedition to Clipperton, conducted in partnership with the University of French Polynesia, the Pristine Seas team packed an impressive array of state-of-the-art tools and equipment. Among the items on their checklist: dive and camera gear, drop cameras, pelagic cameras, underwater video stations, science sampling kits, shark and tuna tagging gear—and a three-person submarine.\nTraveling a thousand kilometers from the coast of Mexico, they set out to better understand the island’s reefs, unexplored deep waters, and surrounding seamounts. After 140 scuba dives, 14 submarine dives, 58 remote camera deployments, a five-day land survey, and a two-day snorkeling study of the lagoon algae, the team achieved a comprehensive assessment of the ecosystem. Over the course of the expedition, the team shot hundreds of hours of underwater and topside footage for a documentary film. Their scientific findings supported the creation of a marine reserve, announced at the September 2016 Our Ocean conference in Washington, D.C., that encompasses Clipperton’s territorial waters.\nClipperton’s waters, they found, are teeming with life. A high degree of coral cover, a strong population of sharks, exceedingly brave moray eels, and an abundance of endemic fishes all indicate a vibrant ecosystem. Yet even at this far-flung outpost, free of human activity for a century, the team noted clear evidence of fishing pressure, including a large number of fishing lines and disproportionately juvenile sharks.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/clipperton-atoll",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-05/20160316_clipperton_msf_1dcuw_01_msfl7422.jpg?h=2488b415&itok=e5bL3676"
+  "imageUrl": "./images/20160316_clipperton_msf_1dcuw_01_msfl7422.jpg"
 }, {
   "lat": -15.857831,
   "lon": -145.528679,
   "title": "Gombessa IV",
   "description": "A unique annual gathering: 18'000 groupers, 700 gray reef sharks, and a group of audacious research divers. Is this a chaotic feeding frenzy or an organized hunting pack?\nWithin the framework of the Gombessa II expedition in 2014, Laurent Ballesta’s team travelled to the southern pass of Fakarava atoll to study the annual reproduction of camouflage groupers. During that expedition, researchers were surprised to note an unusual density of gray reef sharks totaling up to 700 individuals, the largest density of this species ever observed. The team was equally surprised to note their hunting behavior which seemed coordinated.\nTo build on these observations and better understand the ecology and behavior of the gray reef sharks Blancpain decided to award the additional 250'000 euro donation linked to the first limited edition Blancpain Ocean Commitment watch to Ballesta and his team. Half of the donation funded the Gombessa IV Genesis intermediate project, which took place in June-July 2016, and allowed the development and validation of novel scientific protocols and observation techniques. The second half of the donation, added to a full expedition funding from the regular Blancpain Ocean Commitment program, was used for the largest Gombessa expedition, Gombessa IV.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/gombessa-expeditions/gombessa-iv",
-  "imageUrl": "/sites/default/files/styles/medium/public/images/2018-07/22062016-_DSC2212-Modifier-Modifier2_LOW_0.jpg?h=06ac0d8c&itok=kpKTEBK2"
+  "imageUrl": "./images/22062016-_DSC2212-Modifier-Modifier2_LOW_0.jpg"
 }];
 var _default = data;
 exports.default = _default;
