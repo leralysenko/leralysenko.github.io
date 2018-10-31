@@ -29289,6 +29289,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // div.id = 'water';
 // document.body.appendChild(div);
 var img = [20001, 14656];
+var map;
 var PROPS = {
   flyTo: {
     duration: 2000
@@ -29297,14 +29298,12 @@ var PROPS = {
     opacityStart: 0.5,
     opacityEnd: 0,
     updateInterval: 100
-  }
+  } // let map = L.map('map', {
+  //   minZoom: 3,
+  //   maxZoom: 7,
+  // })
+
 };
-
-var map = _leaflet.default.map('map', {
-  minZoom: 3,
-  maxZoom: 7
-});
-
 checkVersion();
 var rc = new _leaflet.default.RasterCoords(map, img);
 map.setView(rc.unproject([10000, 5000]), 4); // const map = L.map('map').setView([0, 0], 4);
@@ -29383,6 +29382,10 @@ setTimeout(function () {
 function checkVersion() {
   if (setIsMobileVersion()) {
     console.log('mob');
+    map = _leaflet.default.map('map', {
+      minZoom: 1,
+      maxZoom: 7
+    });
 
     _leaflet.default.tileLayer('mobtiles/{z}/{x}/{y}.png', {
       maxZoom: 7,
@@ -29391,6 +29394,10 @@ function checkVersion() {
     }).addTo(map);
   } else {
     console.log('desk');
+    map = _leaflet.default.map('map', {
+      minZoom: 4,
+      maxZoom: 7
+    });
 
     _leaflet.default.tileLayer('mobtiles/{z}/{x}/{y}.png', {
       maxZoom: 7,
