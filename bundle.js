@@ -30896,7 +30896,7 @@ var data = [{
   "title": "Gombessa II",
   "description": "After having encountered the cœlacanth during his first Gombessa expedition, diver, photographer and biologist Laurent Ballesta went to Fakarava in French Polynesia for a new scientific expedition intended to study the spawning aggregation of camouflage groupers and its interaction with a huge aggregation of 700 gray reef sharks.\nIn collaboration with French Polynesia's Centre de Recherche Insulaire et Observatoire de l’Environnement (CRIOBE), this Gombessa II mission presented three major challenges: a 24h dive at 20 meters deep, made possible with a new and original gas mix, spending a complete day underwater with sharks and groupers; a challenge in terms of photography as this rare and extremely fast event requires a shooting of more than 2000 images per second; and finally the scientific challenge of studying the mechanisms governing this vital phenomenon and its key role on the lagoon's ecosystem.",
   "linkUrl": "http://preprod-oc.blancpain.com/exploration/gombessa-ii",
-  "imageUrl": "./images/_dsc7795_low.jpg"
+  "imageUrl": "./images/dsc7795_low.jpg"
 }, {
   "lat": -27.551321,
   "lon": 32.682649,
