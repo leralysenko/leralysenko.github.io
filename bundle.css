@@ -143,9 +143,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 
 #map {
   width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0; }
+  height: 100vh; }
 
 .marker-cluster {
   background-clip: padding-box;
@@ -295,7 +293,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     height: 72px; }
   .point-container:hover .title {
     opacity: 1;
-    width: 80px;
+    width: 90px;
     height: 72px;
     display: block;
     padding: 10px; }
