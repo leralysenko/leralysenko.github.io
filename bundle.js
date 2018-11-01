@@ -29358,26 +29358,27 @@ try {
   }
 }
 
-map.addLayer(markers);
+map.addLayer(markers); // setTimeout(() => {
+
+var cloudsUpdateDelta = PROPS.clouds.updateInterval / (PROPS.flyTo.duration - 700) * PROPS.clouds.opacityStart; // map.flyTo(rc.unproject([10000, 5000]), 5, {
+//   duration: (PROPS.flyTo.duration / 1000),
+//   easeLinearity: 0.25
+// });
+
+var i = 0;
+var cloudsOpacityInterval = setInterval(function () {
+  var newOpacity = clouds.options.opacity - cloudsUpdateDelta;
+
+  if (newOpacity < 0) {
+    newOpacity = 0;
+  }
+
+  clouds.options.opacity = newOpacity;
+}, PROPS.clouds.updateInterval);
 setTimeout(function () {
-  var cloudsUpdateDelta = PROPS.clouds.updateInterval / (PROPS.flyTo.duration - 700) * PROPS.clouds.opacityStart;
-  map.flyTo(rc.unproject([10000, 5000]), 5, {
-    duration: PROPS.flyTo.duration / 1000,
-    easeLinearity: 0.25
-  });
-  var cloudsOpacityInterval = setInterval(function () {
-    var newOpacity = clouds.options.opacity - cloudsUpdateDelta;
-
-    if (newOpacity < 0) {
-      newOpacity = 0;
-    }
-
-    clouds.options.opacity = newOpacity;
-  }, PROPS.clouds.updateInterval);
-  setTimeout(function () {
-    clearInterval(cloudsOpacityInterval);
-  }, PROPS.flyTo.duration + PROPS.clouds.updateInterval);
-}, 1000); // detect mobile version
+  clearInterval(cloudsOpacityInterval);
+}, PROPS.flyTo.duration + PROPS.clouds.updateInterval); // }, 1000);
+// detect mobile version
 
 function checkVersion() {
   if (setIsMobileVersion()) {
@@ -29416,9 +29417,7 @@ function setIsMobileVersion() {
 
   console.log(isMobile);
   return isMobile;
-}
-
-window.addEventListener("resize", checkVersion);
+} // window.addEventListener("resize", checkVersion);
 
 /***/ }),
 /* 11 */
