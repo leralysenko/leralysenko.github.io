@@ -29611,8 +29611,6 @@ function hideClouds() {
 }
 
 function changeCurrentZoom(event) {
-  console.log(event);
-
   if (event.deltaY > 0) {
     if (max) {
       min = true;
@@ -29635,8 +29633,6 @@ function changeCurrentZoom(event) {
     }
   }
 
-  console.log(event.deltaY);
-  console.log(currentZoom);
   setCloudsSize();
   prevZoom = currentZoom;
 }
