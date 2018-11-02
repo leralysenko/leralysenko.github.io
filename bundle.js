@@ -29612,6 +29612,14 @@ function hideClouds() {
   }
 }
 
+function hideCloudsToMobile() {
+  var cloudsToMounts = document.getElementsByClassName('cloudImg');
+
+  for (var i = 0; i < cloudsToMounts.length; i++) {
+    cloudsToMounts[i].style.opacity = '0';
+  }
+}
+
 function changeCurrentZoom(event) {
   if (event.deltaY > 0) {
     if (max) {
@@ -29643,8 +29651,9 @@ window.addEventListener("load", function () {
   var MAP = document.getElementById('map');
 
   if (isMobile) {
-    MAP.addEventListener('wheel', hideClouds);
-    MAP.addEventListener('click', hideClouds);
+    MAP.addEventListener('wheel', hideClouds); // MAP.addEventListener('click', hideClouds);
+
+    hideCloudsToMobile();
   } else {
     MAP.addEventListener('wheel', changeCurrentZoom);
   }
