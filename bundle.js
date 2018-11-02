@@ -29646,6 +29646,7 @@ window.addEventListener("load", function () {
 
   if (isMobile) {
     MAP.addEventListener('wheel', hideClouds);
+    MAP.addEventListener('click', hideClouds);
   } else {
     MAP.addEventListener('wheel', changeCurrentZoom);
   }
