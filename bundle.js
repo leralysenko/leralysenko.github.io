@@ -29585,6 +29585,7 @@ function setIsMobileVersion() {
 
 
 function setCloudsSize() {
+  console.log('inside setCloudsSize');
   clouds.options.opacity = 0;
   var cloudsToMounts = document.getElementsByClassName('cloudImg');
 
@@ -29602,6 +29603,7 @@ function setCloudsSize() {
 }
 
 function hideClouds() {
+  console.log('inside hideClouds');
   clouds.options.opacity = 0;
   var cloudsToMounts = document.getElementsByClassName('cloudImg');
 
