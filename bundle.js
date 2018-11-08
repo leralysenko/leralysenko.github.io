@@ -132,19 +132,13 @@ var divWater = document.getElementById('water');
 function switchWater() {
   switchToWater = !switchToWater;
   divWater.style.display = switchToWater ? 'block' : 'none';
-  div.style.backgroundColor = switchToWater ? '#6bdfff' : '#fbfbfb';
+  drop.style.backgroundColor = switchToWater ? '#6bdfff' : '#fbfbfb';
 }
 
-var div = document.createElement('div'); // div.innerHTML = `<input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
-// <label for="cmn-toggle-4"></label>`;
-// div.className = 'switch';
-// document.body.appendChild(div);
-// let input = document.getElementById('cmn-toggle-4');
-// input.addEventListener('click', switchWater);
-
-div.className = 'switch';
-document.body.appendChild(div);
-div.addEventListener('click', switchWater);
+var drop = document.createElement('div');
+drop.className = 'switch';
+document.body.appendChild(drop);
+drop.addEventListener('click', switchWater);
 
 /***/ }),
 /* 1 */
@@ -29411,28 +29405,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // document.body.appendChild(div);
 var img = [20001, 14656];
 var map;
-var PROPS = {
-  flyTo: {
-    duration: 2000
-  },
-  clouds: {
-    opacityStart: 0.5,
-    opacityEnd: 0,
-    updateInterval: 100
-  }
-};
 var isMobile = false;
 var min = true,
     max = false;
-var currentZoom = 3;
-var prevZoom = currentZoom; // let map = L.map('map', {
-//   minZoom: 3,
-//   maxZoom: 7,
-// })
-
+var currentZoom = 4;
+var prevZoom = currentZoom;
+var switchToClouds;
+var cloud;
+var cloudActive;
+var cloudsToMounts;
+map = _leaflet.default.map('map', {
+  minZoom: 3,
+  maxZoom: 7
+});
 checkVersion();
 var rc = new _leaflet.default.RasterCoords(map, img);
-map.setView(rc.unproject([10000, 5000]), 4); // const map = L.map('map').setView([0, 0], 4);
+map.setView(rc.unproject([10000, 5000]), 3); // const map = L.map('map').setView([0, 0], 4);
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 //   maxZoom: 18,
@@ -29442,47 +29430,8 @@ map.setView(rc.unproject([10000, 5000]), 4); // const map = L.map('map').setView
 
 var clouds = _leaflet.default.OWM.clouds({
   showLegend: false,
-  opacity: PROPS.clouds.opacityStart,
+  opacity: 0,
   appId: '3ed0fc5693df6a04c57aab21aa844423'
-}).addTo(map);
-
-var icon = _leaflet.default.divIcon({
-  className: 'parallax-cloud big',
-  html: '<img class="cloudImg" src="./images/cloud.png" width="500" height="200">',
-  iconSize: [200, 110],
-  iconAnchor: [100, 55]
-});
-
-var icon2 = _leaflet.default.divIcon({
-  className: 'parallax-cloud big',
-  html: '<img class="cloudImg" src="./images/cloud2.png" width="150" height="300">',
-  iconSize: [200, 110],
-  iconAnchor: [100, 55]
-});
-
-var icon3 = _leaflet.default.divIcon({
-  className: 'parallax-cloud big',
-  html: '<img class="cloudImg" src="./images/cloud3.png" width="150" height="300">',
-  iconSize: [200, 110],
-  iconAnchor: [100, 55]
-});
-
-_leaflet.default.Marker.parallax(rc.unproject([13500, 2500]), {
-  icon: icon,
-  parallaxZoffset: 10,
-  opacity: 0.7
-}).addTo(map);
-
-_leaflet.default.Marker.parallax(rc.unproject([6100, 6000]), {
-  icon: icon2,
-  parallaxZoffset: 10,
-  opacity: 0.7
-}).addTo(map);
-
-_leaflet.default.Marker.parallax(rc.unproject([3500, 2000]), {
-  icon: icon3,
-  parallaxZoffset: 10,
-  opacity: 0.7
 }).addTo(map);
 
 var markers = _leaflet.default.markerClusterGroup({
@@ -29523,35 +29472,11 @@ try {
   }
 }
 
-map.addLayer(markers); // // setTimeout(() => {
-//   const cloudsUpdateDelta = (PROPS.clouds.updateInterval / (PROPS.flyTo.duration - 700)) * PROPS.clouds.opacityStart
-//   // map.flyTo(rc.unproject([10000, 5000]), 5, {
-//   //   duration: (PROPS.flyTo.duration / 1000),
-//   //   easeLinearity: 0.25
-//   // });
-//   let i = 0;
-//   const cloudsOpacityInterval = setInterval(() => {
-//     let newOpacity = clouds.options.opacity - cloudsUpdateDelta;
-//     if (newOpacity < 0) {
-//       newOpacity = 0
-//     }
-//     clouds.options.opacity = newOpacity
-//   },
-//     PROPS.clouds.updateInterval
-//   )
-//   setTimeout(() => {
-//     clearInterval(cloudsOpacityInterval)
-//   }, PROPS.flyTo.duration + PROPS.clouds.updateInterval)
-// // }, 1000);
-// detect mobile version
+map.addLayer(markers); // detect mobile version
 
 function checkVersion() {
   if (setIsMobileVersion()) {
     console.log('mob');
-    map = _leaflet.default.map('map', {
-      minZoom: 1,
-      maxZoom: 7
-    });
 
     _leaflet.default.tileLayer('mobtiles/{z}/{x}/{y}.png', {
       maxZoom: 7,
@@ -29560,10 +29485,6 @@ function checkVersion() {
     }).addTo(map);
   } else {
     console.log('desk');
-    map = _leaflet.default.map('map', {
-      minZoom: 4,
-      maxZoom: 7
-    });
 
     _leaflet.default.tileLayer('mobtiles/{z}/{x}/{y}.png', {
       maxZoom: 7,
@@ -29585,38 +29506,92 @@ function setIsMobileVersion() {
 
 
 function setCloudsSize() {
-  console.log('inside setCloudsSize');
-  clouds.options.opacity = 0;
   var cloudsToMounts = document.getElementsByClassName('cloudImg');
+  var k = 3; // console.log(clouds);
+  // clouds.options.opacity = 1;
 
-  for (var i = 0; i < cloudsToMounts.length; i++) {
-    if (prevZoom > currentZoom) {
-      cloudsToMounts[i].width *= 2;
-      cloudsToMounts[i].height *= 2;
+  for (var i = 0; i < 3; i++) {
+    if (prevZoom > currentZoom && currentZoom !== 4) {
+      cloudsToMounts[i].style.opacity = '0';
+      cloudsToMounts[k].style.opacity = '0.7';
+      cloudsToMounts[k].width *= 2;
+      cloudsToMounts[k].height *= 2;
     }
 
-    if (prevZoom < currentZoom) {
-      cloudsToMounts[i].width /= 2;
-      cloudsToMounts[i].height /= 2;
+    if (prevZoom < currentZoom && currentZoom !== 4) {
+      cloudsToMounts[i].style.opacity = '0';
+      cloudsToMounts[k].style.opacity = '0.7';
+      cloudsToMounts[k].width /= 2;
+      cloudsToMounts[k].height /= 2;
     }
+
+    if (currentZoom === 4) {
+      cloudsToMounts[i].style.opacity = '0.7';
+      cloudsToMounts[k].style.opacity = '0';
+    }
+
+    k++;
+  }
+
+  if (currentZoom === 4) {
+    cloudsToMounts[3].width = '250';
+    cloudsToMounts[3].height = '100';
+    cloudsToMounts[4].width = '75';
+    cloudsToMounts[4].height = '150';
+    cloudsToMounts[5].width = '75';
+    cloudsToMounts[5].height = '150';
   }
 }
 
 function hideClouds() {
-  console.log('inside hideClouds');
+  map.removeLayer(clouds);
   clouds.options.opacity = 0;
   var cloudsToMounts = document.getElementsByClassName('cloudImg');
 
   for (var i = 0; i < cloudsToMounts.length; i++) {
     cloudsToMounts[i].style.opacity = '0';
+    clouds.options.opacity = 0;
   }
 }
 
-function hideCloudsToMobile() {
+function showClouds() {
+  clouds = _leaflet.default.OWM.clouds({
+    showLegend: false,
+    opacity: 0.5,
+    appId: '3ed0fc5693df6a04c57aab21aa844423'
+  }).addTo(map);
   var cloudsToMounts = document.getElementsByClassName('cloudImg');
 
-  for (var i = 0; i < cloudsToMounts.length; i++) {
-    cloudsToMounts[i].style.opacity = '0';
+  if (currentZoom === 4) {
+    var k = 0.1;
+    var timerId = setInterval(function () {
+      cloudsToMounts[0].style.opacity = k;
+      cloudsToMounts[1].style.opacity = k;
+      cloudsToMounts[2].style.opacity = k;
+      k += 0.1;
+    }, 100);
+    setTimeout(function () {
+      clearInterval(timerId);
+    }, 700);
+    cloudsToMounts[3].style.opacity = '0';
+    cloudsToMounts[4].style.opacity = '0';
+    cloudsToMounts[5].style.opacity = '0';
+  } else {
+    cloudsToMounts[0].style.opacity = '0';
+    cloudsToMounts[1].style.opacity = '0';
+    cloudsToMounts[2].style.opacity = '0';
+    var _k = 0.1;
+
+    var _timerId = setInterval(function () {
+      cloudsToMounts[3].style.opacity = _k;
+      cloudsToMounts[4].style.opacity = _k;
+      cloudsToMounts[5].style.opacity = _k;
+      _k += 0.1;
+    }, 100);
+
+    setTimeout(function () {
+      clearInterval(_timerId);
+    }, 700);
   }
 }
 
@@ -29626,7 +29601,7 @@ function changeCurrentZoom(event) {
       min = true;
       currentZoom++;
 
-      if (currentZoom === 3) {
+      if (currentZoom === 4) {
         max = false;
       }
     }
@@ -29644,6 +29619,7 @@ function changeCurrentZoom(event) {
   }
 
   setCloudsSize();
+  hideClouds();
   prevZoom = currentZoom;
 }
 
@@ -29651,13 +29627,104 @@ window.addEventListener("load", function () {
   var MAP = document.getElementById('map');
 
   if (isMobile) {
-    MAP.addEventListener('wheel', hideClouds); // MAP.addEventListener('click', hideClouds);
-
-    hideCloudsToMobile();
+    createCloudButton();
+    hideClouds();
+    MAP.addEventListener('click', hideClouds);
   } else {
+    createClouds();
+    hideClouds();
     MAP.addEventListener('wheel', changeCurrentZoom);
   }
 });
+
+function createClouds() {
+  createCloudButton();
+
+  var icon = _leaflet.default.divIcon({
+    className: 'parallax-cloud big',
+    html: '<img class="cloudImg" src="./images/cloud.png" width="250" height="100">',
+    iconSize: [200, 110],
+    iconAnchor: [100, 55]
+  });
+
+  var icon2 = _leaflet.default.divIcon({
+    className: 'parallax-cloud big',
+    html: '<img class="cloudImg" src="./images/cloud2.png" width="75" height="150">',
+    iconSize: [200, 110],
+    iconAnchor: [100, 55]
+  });
+
+  var icon3 = _leaflet.default.divIcon({
+    className: 'parallax-cloud big',
+    html: '<img class="cloudImg" src="./images/cloud3.png" width="75" height="150">',
+    iconSize: [200, 110],
+    iconAnchor: [100, 55]
+  });
+
+  _leaflet.default.Marker.parallax(rc.unproject([14000, 3000]), {
+    icon: icon,
+    parallaxZoffset: 10,
+    opacity: 1
+  }).addTo(map);
+
+  _leaflet.default.Marker.parallax(rc.unproject([7100, 7000]), {
+    icon: icon2,
+    parallaxZoffset: 10,
+    opacity: 1
+  }).addTo(map);
+
+  _leaflet.default.Marker.parallax(rc.unproject([4800, 3000]), {
+    icon: icon3,
+    parallaxZoffset: 10,
+    opacity: 1
+  }).addTo(map);
+
+  _leaflet.default.Marker.parallax(rc.unproject([13500, 2500]), {
+    icon: icon,
+    parallaxZoffset: 10,
+    opacity: 1
+  }).addTo(map);
+
+  _leaflet.default.Marker.parallax(rc.unproject([6100, 6000]), {
+    icon: icon2,
+    parallaxZoffset: 10,
+    opacity: 1
+  }).addTo(map);
+
+  _leaflet.default.Marker.parallax(rc.unproject([3500, 2000]), {
+    icon: icon3,
+    parallaxZoffset: 10,
+    opacity: 1
+  }).addTo(map);
+
+  var cloudsToMounts = document.getElementsByClassName('cloudImg');
+  cloudsToMounts[0].style.opacity = '0';
+  cloudsToMounts[1].style.opacity = '0';
+  cloudsToMounts[2].style.opacity = '0';
+  cloudsToMounts[3].style.opacity = '0';
+  cloudsToMounts[4].style.opacity = '0';
+  cloudsToMounts[5].style.opacity = '0';
+}
+
+function createCloudButton() {
+  switchToClouds = false;
+  cloud = document.createElement('div');
+  cloud.className = 'switchClouds';
+  document.body.appendChild(cloud);
+  cloud.addEventListener('click', switchClouds);
+  cloudActive = document.createElement('div');
+  cloudActive.className = 'switchCloudsActive';
+  document.body.appendChild(cloudActive);
+  cloudActive.addEventListener('click', switchClouds);
+}
+
+function switchClouds() {
+  switchToClouds = !switchToClouds;
+  if (switchToClouds) showClouds();else hideClouds();
+  cloud.style.backgroundColor = switchToClouds ? '#6bdfff' : '#fbfbfb';
+  cloud.style.display = switchToClouds ? 'none' : 'block';
+  cloudActive.style.display = switchToClouds ? 'block' : 'none';
+}
 
 /***/ }),
 /* 12 */
