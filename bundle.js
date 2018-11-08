@@ -29545,12 +29545,12 @@ function setCloudsSize() {
 
 function hideClouds() {
   map.removeLayer(clouds);
-  clouds.options.opacity = 0;
+  switchToClouds = false;
+  checkCloudButtonColor();
   var cloudsToMounts = document.getElementsByClassName('cloudImg');
 
   for (var i = 0; i < cloudsToMounts.length; i++) {
     cloudsToMounts[i].style.opacity = '0';
-    clouds.options.opacity = 0;
   }
 }
 
@@ -29561,6 +29561,7 @@ function showClouds() {
     appId: '3ed0fc5693df6a04c57aab21aa844423'
   }).addTo(map);
   var cloudsToMounts = document.getElementsByClassName('cloudImg');
+  checkCloudButtonColor();
 
   if (currentZoom === 4) {
     var k = 0.1;
@@ -29720,7 +29721,10 @@ function createCloudButton() {
 
 function switchClouds() {
   switchToClouds = !switchToClouds;
-  if (switchToClouds) showClouds();else hideClouds();
+  if (switchToClouds) showClouds();else hideClouds(); // checkCloudButtonColor();
+}
+
+function checkCloudButtonColor() {
   cloud.style.backgroundColor = switchToClouds ? '#6bdfff' : '#fbfbfb';
   cloud.style.display = switchToClouds ? 'none' : 'block';
   cloudActive.style.display = switchToClouds ? 'block' : 'none';
