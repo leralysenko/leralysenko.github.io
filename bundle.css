@@ -74,7 +74,7 @@ body {
   top: 0px;
   left: 0px;
   z-index: 500;
-  display: none; }
+  display: block; }
 
 .switch {
   position: absolute;
@@ -96,7 +96,7 @@ body {
   z-index: 600;
   width: 43.75px;
   height: 15px;
-  background: #fbfbfb;
+  background-color: #fbfbfb;
   border-radius: 12.5px;
   -webkit-border-radius: 12.5px;
   -moz-border-radius: 12.5px;
@@ -134,7 +134,7 @@ body {
   z-index: 600;
   width: 43.75px;
   height: 15px;
-  background: #6bdfff;
+  background-color: #6bdfff;
   border-radius: 12.5px;
   -webkit-border-radius: 12.5px;
   -moz-border-radius: 12.5px;
@@ -145,7 +145,7 @@ body {
 .switchCloudsActive:after, .switchCloudsActive:before {
   content: '';
   position: absolute;
-  background: #6bdfff;
+  background-color: #6bdfff;
   z-index: -1; }
 
 .switchCloudsActive:after {
@@ -317,6 +317,104 @@ body {
     width: 72px;
     height: 72px; }
   .point-container:hover .title {
+    opacity: 1;
+    width: 90px;
+    height: 72px;
+    display: block;
+    padding: 10px; }
+
+.point-container .point {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transition: width .6s, height .6s; }
+  .point-container .point .background-wrapper {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.4); }
+  .point-container .point .background {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+    transition: width .6s, height .6s; }
+  .point-container .point .image {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    z-index: 2;
+    transition: width .7s, height .7s; }
+  .point-container .point .topTitle {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    z-index: 2;
+    font-style: italic;
+    color: white;
+    font-size: 14px;
+    display: none; }
+    .point-container .point .topTitle a {
+      color: white;
+      text-decoration: none; }
+      .point-container .point .topTitle a:hover {
+        font-weight: bold; }
+  .point-container .point .text {
+    position: absolute;
+    margin: auto;
+    top: 36px;
+    right: -157px;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    z-index: 2;
+    font-style: italic;
+    color: white;
+    font-size: 10px;
+    padding: 10px;
+    transition: width .7s, height .7s; }
+    .point-container .point .text a {
+      color: white;
+      text-decoration: none; }
+
+.point-container:hover {
+  width: 80px;
+  height: 80px; }
+  .point-container:hover .background {
+    width: 80px;
+    height: 80px; }
+  .point-container:hover .image {
+    opacity: 1;
+    width: 72px;
+    height: 72px; }
+  .point-container:hover .topTitle {
     opacity: 1;
     width: 90px;
     height: 72px;
