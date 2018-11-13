@@ -30226,7 +30226,8 @@ map = _leaflet.default.map('map', {
 });
 checkVersion();
 var rc = new _leaflet.default.RasterCoords(map, img);
-map.setView(rc.unproject([10000, 5000]), 3); // const map = L.map('map').setView([0, 0], 4);
+map.setView(rc.unproject([10000, 5000]), 4); // map.fitBounds([-180, 180], null);
+// const map = L.map('map').setView([0, 0], 4);
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 //   maxZoom: 18,
@@ -30236,7 +30237,7 @@ map.setView(rc.unproject([10000, 5000]), 3); // const map = L.map('map').setView
 
 var clouds = _leaflet.default.OWM.clouds({
   showLegend: false,
-  opacity: 0.7,
+  opacity: 0.4,
   appId: '3ed0fc5693df6a04c57aab21aa844423'
 }).addTo(map);
 
@@ -30286,7 +30287,6 @@ function checkVersion() {
 
     _leaflet.default.tileLayer('mobtiles/{z}/{x}/{y}.png', {
       maxZoom: 7,
-      noWrap: true,
       id: 'mapbox.streets'
     }).addTo(map);
   } else {
@@ -30294,7 +30294,6 @@ function checkVersion() {
 
     _leaflet.default.tileLayer('mobtiles/{z}/{x}/{y}.png', {
       maxZoom: 7,
-      noWrap: true,
       id: 'mapbox.streets'
     }).addTo(map);
   }
@@ -30350,7 +30349,6 @@ function setCloudsSize() {
 }
 
 function hideClouds() {
-  console.log(1);
   map.removeLayer(clouds);
   switchToClouds = false;
   checkCloudButtonColor();
@@ -31308,7 +31306,7 @@ var SPACE_TEST = './assets/points/space_point_1.jpg';
 var POINTS = [];
 
 for (var i = 0; i < _data.default.length; i++) {
-  if (_data.default[i].title === 'Last Ice Area' || _data.default[i].title === 'Franz Josef Land') {
+  if (_data.default[i].title === 'Last Ice Area' || _data.default[i].title === 'Franz Josef Land' || _data.default[i].title === 'New Caledonia') {
     console.log(1);
     POINTS.push({
       html: (0, _topPoint.default)(_data.default[i].imageUrl, _data.default[i].title, _data.default[i].linkUrl),
