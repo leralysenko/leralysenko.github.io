@@ -30210,7 +30210,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // div.id = 'water';
 // document.body.appendChild(div);
 var img = [20001, 14656];
-var map;
 var isMobile = false;
 var min = true,
     max = false;
@@ -30220,14 +30219,12 @@ var switchToClouds;
 var cloud;
 var cloudActive;
 var cloudsToMounts;
-map = _leaflet.default.map('map', {
-  minZoom: 3,
-  maxZoom: 7
-});
-checkVersion();
-var rc = new _leaflet.default.RasterCoords(map, img);
-map.setView(rc.unproject([10000, 5000]), 4); // map.fitBounds([-180, 180], null);
-// const map = L.map('map').setView([0, 0], 4);
+
+var map = _leaflet.default.map('map').setView([0, 0], 2);
+
+map.scrollWheelZoom.disable();
+checkVersion(); // const rc = new L.RasterCoords(map, img)
+// map.setView(rc.unproject([10000, 5000]), 4);
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 //   maxZoom: 18,
@@ -30235,11 +30232,15 @@ map.setView(rc.unproject([10000, 5000]), 4); // map.fitBounds([-180, 180], null)
 //   accessToken: 'pk.eyJ1IjoidmxhZGlzbGF2LXJ1ZGV2IiwiYSI6ImNqbXQ4ejB2dTAwOWMza3A1dDVlZ21tNWYifQ.UL46ycuUd8UVKh-miR0gLw'
 // }).addTo(map);
 
-var clouds = _leaflet.default.OWM.clouds({
-  showLegend: false,
-  opacity: 0.4,
-  appId: '3ed0fc5693df6a04c57aab21aa844423'
-}).addTo(map);
+_leaflet.default.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 18,
+  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+}).addTo(map); // let clouds = L.OWM.clouds({
+//   showLegend: false,
+//   opacity: 0.4,
+//   appId: '3ed0fc5693df6a04c57aab21aa844423'
+// }).addTo(map);
+
 
 var markers = _leaflet.default.markerClusterGroup({
   showCoverageOnHover: false
@@ -30253,7 +30254,15 @@ try {
   for (var _iterator = _index.default[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
     var point = _step.value;
 
-    var marker = _leaflet.default.marker(rc.unproject([point.longtitude, point.latitude]), {
+    // let marker = L.marker(rc.unproject([point.longtitude, point.latitude]), {
+    //   icon: L.divIcon({
+    //     className: 'point-container',
+    //     html: point.html,
+    //     iconSize: [80, 80],
+    //     iconAnchor: [40, 40]
+    //   })
+    // });
+    var marker = _leaflet.default.marker([point.latitude, point.longtitude], {
       icon: _leaflet.default.divIcon({
         className: 'point-container',
         html: point.html,
@@ -30290,12 +30299,13 @@ function checkVersion() {
       id: 'mapbox.streets'
     }).addTo(map);
   } else {
-    console.log('desk');
-
-    _leaflet.default.tileLayer('mobtiles/{z}/{x}/{y}.png', {
-      maxZoom: 7,
-      id: 'mapbox.streets'
-    }).addTo(map);
+    console.log('desk'); // L.tileLayer('tiles/{z}/{x}/{y}.png',
+    //     {    maxZoom: 7,
+    //       id: 'mapbox.streets'  }).addTo(map);
+    // L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    //   maxZoom: 200,
+    // attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    // }).addTo(map);
   }
 }
 
@@ -30431,16 +30441,14 @@ function changeCurrentZoom(event) {
 window.addEventListener("load", function () {
   var MAP = document.getElementById('map');
 
-  if (isMobile) {
-    createCloudButton();
-    hideClouds();
-    MAP.addEventListener('click', hideClouds);
-  } else {
-    createClouds(); // hideClouds();
-
-    MAP.addEventListener('click', hideClouds);
-    MAP.addEventListener('wheel', hideClouds);
-  }
+  if (isMobile) {// createCloudButton();
+    // hideClouds();
+    // MAP.addEventListener('click', hideClouds);
+  } else {// createClouds();
+      // hideClouds();
+      // MAP.addEventListener('click', hideClouds);
+      // MAP.addEventListener('wheel', hideClouds);
+    }
 });
 
 function createClouds() {
@@ -31310,15 +31318,15 @@ for (var i = 0; i < _data.default.length; i++) {
     console.log(1);
     POINTS.push({
       html: (0, _topPoint.default)(_data.default[i].imageUrl, _data.default[i].title, _data.default[i].linkUrl),
-      latitude: convertToPixels(_data.default[i].lat, "lat"),
-      longtitude: convertToPixels(_data.default[i].lon, "lon")
+      latitude: _data.default[i].lat,
+      longtitude: _data.default[i].lon
     });
   } else {
     console.log(2);
     POINTS.push({
       html: (0, _point.default)(_data.default[i].imageUrl, _data.default[i].title, _data.default[i].linkUrl),
-      latitude: convertToPixels(_data.default[i].lat, "lat"),
-      longtitude: convertToPixels(_data.default[i].lon, "lon")
+      latitude: _data.default[i].lat,
+      longtitude: _data.default[i].lon
     });
   }
 }
