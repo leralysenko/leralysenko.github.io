@@ -30223,6 +30223,18 @@ var cloudsToMounts;
 var map = _leaflet.default.map('map').setView([0, 0], 2);
 
 map.scrollWheelZoom.disable();
+
+var southWest = _leaflet.default.latLng(-89.98155760646617, -180),
+    northEast = _leaflet.default.latLng(89.99346179538875, 180);
+
+var bounds = _leaflet.default.latLngBounds(southWest, northEast);
+
+map.setMaxBounds(bounds);
+map.on('drag', function () {
+  map.panInsideBounds(bounds, {
+    animate: false
+  });
+});
 checkVersion(); // const rc = new L.RasterCoords(map, img)
 // map.setView(rc.unproject([10000, 5000]), 4);
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
